@@ -48,6 +48,10 @@
          function eva_button() {
              return confirm("평가할 자산을 선택해주세요.")           }
        </script>         <li><a href="sec_eva.jsp">보안성 평가 결과</a></li>   
+         <li><a href="emergency_case.jsp">비상사건 관리</a></li>   
+         <li><a href="scenario.jsp">시나리오 리스트</a></li>
+         <li><a href="scenario_eva.jsp">시나리오 평가</a></li>
+         <li><a href="breach_corr.jsp">침해대응 훈련</a></li>   
       </ul>
       <%
          if(userID==null){
@@ -86,6 +90,7 @@
       <section id="features">
                <div class="container">
                   <header>
+[${userID }]님 반갑습니다.                  
                      <h3>Welcome! this is</h3>
                      <h2><strong>Industry Control System</strong> Vulnerability Assessment Program</h2>
                   </header>

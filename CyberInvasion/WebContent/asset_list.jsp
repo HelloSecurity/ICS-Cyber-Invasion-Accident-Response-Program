@@ -27,7 +27,7 @@
    String protocol=request.getParameter("protocol");
    String os_type=request.getParameter("os_type");
    String usages=request.getParameter("usages");
-   String db_list="select * from AssetTable";
+   String db_list="select * from assettable";
    
    int num=1;
  %>
@@ -94,6 +94,10 @@
          }
        </script>
          <li><a href="sec_eva.jsp">보안성 평가 결과</a></li>   
+                  <li><a href="emergency_case.jsp">비상사건 관리</a></li>   
+         <li ><a href="scenario.jsp">시나리오 리스트</a></li>
+         <li><a href="scenario_eva.jsp">시나리오 평가</a></li>
+         <li><a href="breach_corr.jsp">침해대응 훈련</a></li>   
       </ul>
       <% //로그인 여부에 따라 달라지는 탭 구현 위한 코드
          if(userID==null){
@@ -130,10 +134,10 @@
    </nav> 
           <% //DB연동을 위함
                        try {
-                    	   String dbURL ="jdbc:mysql://127.0.0.1:3306/ics3?serverTimezone=UTC";
-                           String dbID = "root";
-                           String dbPassword = "0805";
-                           Class.forName("com.mysql.cj.jdbc.Driver");
+               			String dbURL ="jdbc:mysql://127.0.0.1:3306/sys?serverTimezone=UTC";
+            	        String dbID = "root";
+            	        String dbPassword = "password";
+            			Class.forName("com.mysql.cj.jdbc.Driver");
                            Conn= DriverManager.getConnection(dbURL, dbID, dbPassword);
                           stmt=Conn.createStatement();
                   
