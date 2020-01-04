@@ -36,7 +36,11 @@
          <li><a href="main.jsp">메인</a></li>
          <li><a href="asset_list.jsp">자산 리스트</a></li>
          <li><a href="asset_eva.jsp">자산 평가</a></li>
-         <li><a href="sec_eva.jsp">보안성 평가 결과</a></li>   
+         <li><a href="sec_eva.jsp">보안성 평가 결과</a></li> 
+         <li><a href="emergency_case.jsp">비상사건 관리</a></li>   
+         <li><a href="scenario.jsp">시나리오 리스트</a></li>
+         <li><a href="scenario_eva.jsp">시나리오 평가</a></li>
+         <li><a href="breach_corr.jsp">침해대응 훈련</a></li>     
       </ul>
       <ul class="nav navbar-nav navbar-right">
          <li class="dropdown">
@@ -80,10 +84,10 @@ request.setAttribute("str", asset_name);
 Connection Conn=null;
 
 try {
-	String dbURL ="jdbc:mysql://127.0.0.1:3306/ics3?serverTimezone=UTC";
+	String dbURL ="jdbc:mysql://127.0.0.1:3306/sys?serverTimezone=UTC";
     String dbID = "root";
-    String dbPassword = "0805";
-    Class.forName("com.mysql.cj.jdbc.Driver");
+    String dbPassword = "password";
+	Class.forName("com.mysql.cj.jdbc.Driver");
     Conn= DriverManager.getConnection(dbURL, dbID, dbPassword);
     String sql = "SELECT * from AssetTable where asset_name = '" +asset_name+ "'";
     PreparedStatement pstmt = Conn.prepareStatement(sql);

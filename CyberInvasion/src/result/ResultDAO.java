@@ -13,9 +13,9 @@ public class ResultDAO {
 	
 	public ResultDAO() {
 		try {
-			String dbURL ="jdbc:mysql://127.0.0.1:3306/ics3?serverTimezone=UTC";
+			String dbURL ="jdbc:mysql://127.0.0.1:3306/sys?serverTimezone=UTC";
 	        String dbID = "root";
-	        String dbPassword = "0805";
+	        String dbPassword = "password";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn= DriverManager.getConnection(dbURL, dbID, dbPassword);		
 		}	catch(Exception e) {

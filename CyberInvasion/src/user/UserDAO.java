@@ -15,13 +15,16 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
-			String dbURL ="jdbc:mysql://127.0.0.1:3306/ics3?serverTimezone=UTC";
+			String dbURL ="jdbc:mysql://127.0.0.1:3306/sys?serverTimezone=UTC";
 	        String dbID = "root";
-	        String dbPassword = "0805";
-			Class.forName("com.mysql.jdbc.Driver");
+	        String dbPassword = "password";
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn= DriverManager.getConnection(dbURL, dbID, dbPassword);
+			System.out.println("커넥션 성공");
 		}	catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("커넥션 실패");
+
 		}
 	}
 	
@@ -58,4 +61,5 @@ public class UserDAO {
 		}
 		return -1; //데이터베이스 오류
 	}
+	
 }
